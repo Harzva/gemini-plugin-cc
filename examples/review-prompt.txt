@@ -1,0 +1,8 @@
+Review the following content.
+
+Focus on:
+
+- clarity
+- technical risk
+- missing assumptions
+- suggested improvements
