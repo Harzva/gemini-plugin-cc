@@ -2,34 +2,46 @@
 
 [English](README.md) | 中文
 
-这是 `everything-agent-cli-to-claude-code` 体系下的 Gemini 独立子仓库。
+> `everything-agent-cli-to-claude-code` 体系下的 Gemini 独立实现仓库。
+
+## 仓库角色
+
+这个仓库专门负责 Gemini 相关的实现细节：
+
+- CLI 调用方式
+- 本地登录假设
+- wrapper 行为
+- 后续 skill 封装
 
 总仓库：
 
 - <https://github.com/Harzva/everything-agent-cli-to-claude-code>
 
-## 仓库目标
-
-这个仓库专门沉淀 Gemini 相关的实现细节：
-
-- Gemini CLI 调用方式
-- 登录与认证说明
-- 模型映射
-- workflow 包装
-- 后续 skill 封装
-
-## 当前范围
-
-第一版先做轻量命令封装，不追求一开始就做成复杂插件。
-
-目前包含：
-
-- Gemini 命令包装脚本
-- 一个简单示例 prompt
-- 一份设计文档
-
 ## 当前状态
 
-- 仓库状态：prototype
-- 命令包装状态：initial
-- 认证方式：依赖本机 Gemini CLI 已登录
+| 模块 | 状态 |
+| --- | --- |
+| 仓库骨架 | ready |
+| Gemini wrapper | initial |
+| skills 目录 | ready |
+| 认证假设 | 本机 Gemini CLI 已登录 |
+
+## 当前包含内容
+
+- `bin/gemini-review.sh`
+- `docs/design.md`
+- `examples/review-prompt.txt`
+- `skills/usecli-gemini.md`
+
+## 适合的方向
+
+- 宽口径 review
+- 结构化批注
+- 第一轮分析
+
+## 下一步
+
+1. 把 wrapper 提升成更完整的 provider 适配器
+2. 增加更多 Gemini 专属动作
+3. 按总仓库 `usecli:*` 规范继续收口
+

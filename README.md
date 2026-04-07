@@ -2,40 +2,46 @@
 
 English | [中文](README_CN.md)
 
-Bridge Gemini CLI workflows into a Claude Code-friendly adapter layer.
+> Gemini-specific adapter work for the `everything-agent-cli-to-claude-code` ecosystem.
 
-## Goal
+## Repository Role
 
-This repository is a provider-specific implementation repo under the umbrella project:
+This repository focuses on Gemini-specific implementation details:
+
+- CLI invocation shape
+- local auth expectations
+- wrapper behavior
+- future skill packaging
+
+Umbrella project:
 
 - <https://github.com/Harzva/everything-agent-cli-to-claude-code>
 
-It focuses on Gemini-specific details:
+## Current State
 
-- CLI invocation
-- auth expectations
-- model mapping
-- workflow wrappers
-- future skill packaging
+| Area | Status |
+| --- | --- |
+| Repo scaffold | ready |
+| Gemini wrapper | initial |
+| Skills directory | ready |
+| Auth assumption | local Gemini CLI login |
 
-## Current Scope
-
-First generation is intentionally lightweight.
-
-It currently includes:
-
-- a command wrapper for Gemini CLI
-- a small example workflow
-- a short design note
-
-## Files
+## Included Today
 
 - `bin/gemini-review.sh`
 - `docs/design.md`
 - `examples/review-prompt.txt`
+- `skills/usecli-gemini.md`
 
-## Status
+## What It Is Good For
 
-- repository status: prototype
-- command wrapper status: initial
-- auth mode: local Gemini CLI credentials
+- broad review
+- structured critique
+- first-pass analysis
+
+## Next Steps
+
+1. turn the wrapper into a richer provider adapter
+2. add more Gemini-specific actions
+3. align with umbrella `usecli:*` conventions
+
