@@ -34,10 +34,17 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 
+if [[ -n "$prompt" && -n "$prompt_file" ]]; then
+  echo "use either --prompt or --prompt-file, not both" >&2
+  exit 1
+fi
+
 if [[ -n "$prompt_file" ]]; then
+  [[ -f "$prompt_file" ]] || { echo "prompt file not found: $prompt_file" >&2; exit 1; }
   prompt="$(cat "$prompt_file")"
 fi
 
 [[ -n "$prompt" ]] || { echo "no prompt supplied" >&2; exit 1; }
+command -v gemini >/dev/null 2>&1 || { echo "provider executable not found: gemini" >&2; exit 1; }
 
 exec gemini -p "$prompt" -o text

@@ -32,6 +32,21 @@ Umbrella project:
 - `docs/design.md`
 - `examples/review-prompt.txt`
 - `skills/usecli-gemini.md`
+- `tests/test_wrapper.sh`
+
+## Verification
+
+Run the local smoke test with:
+
+```bash
+bash tests/test_wrapper.sh
+```
+
+It checks:
+
+- `--help` works
+- the wrapper can read `--prompt-file`
+- the wrapper builds the expected Gemini CLI command shape under a mock binary
 
 ## What It Is Good For
 
@@ -44,4 +59,3 @@ Umbrella project:
 1. turn the wrapper into a richer provider adapter
 2. add more Gemini-specific actions
 3. align with umbrella `usecli:*` conventions
-

@@ -32,6 +32,21 @@
 - `docs/design.md`
 - `examples/review-prompt.txt`
 - `skills/usecli-gemini.md`
+- `tests/test_wrapper.sh`
+
+## 测试与验证
+
+运行本地 smoke test：
+
+```bash
+bash tests/test_wrapper.sh
+```
+
+当前覆盖：
+
+- `--help` 可用
+- `--prompt-file` 可读
+- 在 mock `gemini` 二进制下，wrapper 会拼出预期命令
 
 ## 适合的方向
 
@@ -44,4 +59,3 @@
 1. 把 wrapper 提升成更完整的 provider 适配器
 2. 增加更多 Gemini 专属动作
 3. 按总仓库 `usecli:*` 规范继续收口
-
